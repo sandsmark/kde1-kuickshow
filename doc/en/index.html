@@ -1,0 +1,131 @@
+<html><body bgcolor=white><head><title>KuickShow 0.5</title></head>
+<font face="arial, helvetica, verdana">
+<img src=logo.gif width=175 height=25 alt="KuickShow" align=bottom> <b>v0.6</b>
+<hr>
+<pre>
+<font face="arial, helvetica, verdana">
+KuickShow is a comfortable image browser/viewer. It displays a filebrowser
+where you can select (doubleclick, Return-key or "view" in popupmenu) images
+which are then shown.
+Images can be displayed either in an own window, as large as the image,
+or fullscreen. This is configurable in the options dialog.
+
+The options dialog has some more possibilities:
+<ul>
+<li>images can be automatically shrunk to fit onto the screen, if they are larger</li><br><br>
+<li>you can set the delay time for a slide show</li><br><br> 
+<li>you can tell the browser which filetypes to show</li><br><br> 
+<li>you can tweak the speed/quality ratio</li><br><br> 
+</ul>
+
+You can display more than one image at a time, by selecting one image, and
+another one, and one more, and ...
+It will be more fun, if you are not in fullscreen mode, tho ;o)
+
+If you look for a certain file, just enter the first characters of its filename
+(in the browser). A small edit window pops up in the bottom-right corner. Once
+a matching file is found, it is highlighted. Leave the edit-window by pressing
+return or escape.
+
+<hr>
+
+<h3>Image window:</h3>
+<font color="blue">Keyboard shortcuts</font>
+<ul>
+<li><b>PageDown</b> loads the next image</li>
+<li><b>PageUp</b> loads the previous image</li>
+<li><b>Home</b> loads the first image</li>
+<li><b>End</b> loads the last image</li>
+<li><b>+</b> zooms into the image</li>
+<li><b>-</b> zooms out of the image</li>
+<li><b>*</b> flips the image horizontally</li>
+<li><b>/</b> flips the image vertically</li>
+<li><b>7</b> rotates 270° clockwise ( = 90 degrees counterclockwise )</li>
+<li><b>9</b> rotates 90° clockwise</li>
+<li><b>arrow keys</b> move the image (or rather you, the viewer) if it is larger than the screen</li>
+<li><b>Return</b> toggles between fullscreen and window mode</li>
+<li><b>Spacebar</b> toggles showing the browser</li>
+<li><b>Esc</b> closes the image window (and kuickshow too, if you don't have a browser window open</li>
+<li><b>b / B</b> lightens / darkens the image</li>
+<li><b>c / C</b> adds / removes contrast</li>
+<li><b>g / G</b> more / less gamma</li>
+<li><b>Enter</b> rerenders the image in original settings/size</li>
+<li><b>Ctrl-s</b> opens a filedialog to save the current image</li>
+<li><b>Delete</b> deletes the current image</li>
+<li><b>Shift-Delete</b> deletes the current image without asking</li>
+<li><b>Ctrl-q</b> quits KuickShow </li>
+</ul>
+
+<font color="blue">Mouse usage</font>
+<ul>
+<li><b>right button</b> opens popupmenu with several options</li>
+<li><b>left button (held) + move</b> moves image, if it doesn't fit into the window</li>
+<li><b>Shift+left button held + move</b> let's you mark a rectangle to zoom into</li>
+</ul>
+
+<h3>Browser window:</h3>
+<font color="blue">Keyboard shortcuts</font>
+<ul>
+<li><b>Return</b> enters a directory, or opens an image window</li>
+<li><b>PageDown</b> advances one page</li>
+<li><b>PageUp</b> moves back one page</li>
+<li><b>Home</b> selects the first file/directory</li>
+<li><b>End</b> selects the last file/directory</li>
+<li><b>Spacebar</b> toggles showing the browser, if an imagewindow is open</li>
+<li><b>"any character"</b> opens a small editfield used for "filecompletion". Enter the first characters of a filename to search for, and if found, it will be selected</li>
+<li><b>Ctrl-g</b> "goto", let's you enter a directory, where to go to</li>
+<li><b>F1</b> opens online help</li>
+<li><b>Delete</b> deletes the current file</li>
+<li><b>Shift-Delete</b> deletes the current file without asking</li>
+<li><b>Ctrl-q</b> quits KuickShow</li>
+</ul>
+
+<font color="blue">Mouse usage</font>
+<ul>
+<li><b>Single leftclick</b> enters a directory, or selects an image window</li>
+<li><b>Single rightclick</b> opens popup window with several options</li>
+<li><b>doubleclick</b> opens image window</li>
+</ul>
+<hr>
+
+<h3>Commandline parameters</h3>
+You can pass KuickShow a commandline parameter:
+Start it as
+
+<font face="courier">kuickshow /home/user/images/bla.jpg</font>
+
+The image bla.jpg will be displayed and the browser will show you the 
+directory contents of /home/user/images. The browser is hidden until you hit
+the space bar, tho.
+If you just give a directory as commandline, e.g.
+
+<font face=courier>kuickshow /usr/local/images/</font>
+
+it will just open that directory.
+You can also drop images from kfm onto the image window (not the filebrowser!).
+
+<hr>
+<h3>Bugs / Limitations</h3>
+<ul>
+<li>Printing does work, but is very limited. Printed images are stretched to fully 
+fit on the page, which is probably not what you always want :-}</li>
+
+<li>filebrowser gives lots of asserts and flickers.
+This happens only in old kdelibs, the current KDE 1.1 is fixed.</li>
+
+<li>somehow, the fullscreen mode doesn't work correctly, when kwm is in
+"ShapeMode", i.e. using shaped windows from some theme. and also doesn't work
+properly with other windowmanagers than kwm</li>
+
+<li>You can't browse multiple directories by opening more than one image window.</li>
+</ul>
+</font>
+</pre>
+<br>
+
+Carsten Pfeiffer <a href="mailto:carpdjih@sp.zrz.tu-berlin.de">carpdjih@sp.zrz.tu-berlin.de</a> / <a href="mailto:pfeiffer@kde.org">pfeiffer@kde.org</a>
+
+
+</font>
+</body>
+</html>

@@ -1,0 +1,383 @@
+# KuickShow, a fast and comfortable imagebrowser/viewer
+# based on Rasterman's Imlib
+# Copyright (C) 1998 by Carsten Pfeiffer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 1999-02-04 11:36+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: aboutwidget.cpp:24
+msgid "About"
+msgstr "Über"
+
+#: fileview.cpp:28
+msgid "View"
+msgstr "Anzeigen"
+
+#: fileview.cpp:30
+msgid "Rename..."
+msgstr "Umbenennen..."
+
+#: fileview.cpp:31
+msgid "Delete"
+msgstr "Löschen"
+
+#: fileview.cpp:33 imlibwidget.cpp:292
+msgid "Print image..."
+msgstr "Drucken..."
+
+#: fileview.cpp:35
+msgid "Change directory..."
+msgstr "Verzeichnis wechseln..."
+
+#: fileview.cpp:37
+msgid "Properties"
+msgstr "Eigenschaften"
+
+#: fileview.cpp:108
+msgid "Rename "
+msgstr "Umbenennen"
+
+#: fileview.cpp:108
+msgid " to:"
+msgstr " nach:"
+
+#: fileview.cpp:109
+msgid "Rename item"
+msgstr "Datei/Verzeichnis umbenennen"
+
+#: fileview.cpp:143
+msgid "Switch to directory: "
+msgstr "Neues Verzeichnis: "
+
+#: fileview.cpp:145
+msgid "Change directory"
+msgstr "Verzeichnis wechseln"
+
+#: imlibwidget.cpp:262
+msgid "+    b"
+msgstr "+    b"
+
+#: imlibwidget.cpp:263
+msgid "-    B"
+msgstr "-    B"
+
+#: imlibwidget.cpp:266
+msgid "+    c"
+msgstr "+    c"
+
+#: imlibwidget.cpp:267
+msgid "-    C"
+msgstr "-    C"
+
+#: imlibwidget.cpp:270
+msgid "+    g"
+msgstr "+    g"
+
+#: imlibwidget.cpp:271
+msgid "-    G"
+msgstr "-    G"
+
+#: imlibwidget.cpp:273
+msgid "Zoom in"
+msgstr "Vergrößern"
+
+#: imlibwidget.cpp:275
+msgid "Zoom out"
+msgstr "Verkleinern"
+
+#: imlibwidget.cpp:278
+msgid "Rotate 90°"
+msgstr "Um 90° rotieren"
+
+#: imlibwidget.cpp:280
+msgid "Rotate -90°"
+msgstr "Um -90° rotieren"
+
+#: imlibwidget.cpp:283
+msgid "Flip horizontally"
+msgstr "Horizontal kippen"
+
+#: imlibwidget.cpp:285
+msgid "Flip vertically"
+msgstr "Vertikal kippen"
+
+#: imlibwidget.cpp:288
+msgid "Brightness"
+msgstr "Helligkeit"
+
+#: imlibwidget.cpp:289
+msgid "Contrast"
+msgstr "Kontrast"
+
+#: imlibwidget.cpp:290
+msgid "Gamma"
+msgstr "Gamma"
+
+#: imlibwidget.cpp:294
+msgid "Save as..."
+msgstr "Speichern unter..."
+
+#: imlibwidget.cpp:544
+msgid "Couldn't save the file,\n"
+msgstr "Ich kann das Bild nicht speichern,\n"
+
+#: imlibwidget.cpp:545
+msgid "maybe this disk is full, or you don't\n"
+msgstr "vielleicht ist die Festplatte voll, oder\n"
+
+#: imlibwidget.cpp:546
+msgid "have write permissions to the file."
+msgstr "Sie haben keine Schreibberechtigung."
+
+#: imlibwidget.cpp:547
+msgid "File saving failed"
+msgstr "Speichern fehlgeschlagen"
+
+#: kfileview.cpp:183
+msgid ""
+"I can't change into\n"
+"\""
+msgstr ""
+"Ich kann nicht nach\n"
+"\""
+
+#: kfileview.cpp:185
+msgid ""
+"\"\n"
+"as it is not a directory."
+msgstr ""
+"\"\n"
+"wechseln, da es kein Verzeichnis ist."
+
+#: kfileview.cpp:186
+msgid "Not a directory"
+msgstr "Kein Verzeichnis"
+
+#: kuickshow.cpp:127
+msgid "Exit KuickShow"
+msgstr "KuickShow beenden"
+
+#: kuickshow.cpp:133
+msgid "Configuration"
+msgstr "Konfiguration"
+
+#: kuickshow.cpp:138
+msgid "Slideshow"
+msgstr "Diashow"
+
+#: kuickshow.cpp:145
+msgid "Change to Home Directory"
+msgstr "In's Home-Verzeichnis wechseln"
+
+#: kuickshow.cpp:150
+msgid "Reload Directory"
+msgstr "Verzeichnis neu einlesen"
+
+#: kuickshow.cpp:155
+msgid "Toggle showing hidden files"
+msgstr "Versteckte Dateien anzeigen / nicht anzeigen"
+
+#: kuickshow.cpp:166
+msgid "About KuickShow"
+msgstr "Über KuickShow"
+
+#: kuickshow.cpp:171
+msgid "Help"
+msgstr "Hilfe"
+
+#: kuickshow.cpp:381
+msgid "KuickShow: Couldn't print image."
+msgstr "KuickShow: Konnte Bild nicht drucken."
+
+#: kuickshow.cpp:406
+msgid "You can't drop directories\n"
+msgstr "Sie können keine Verzeichnisse\n"
+
+#: kuickshow.cpp:407 kuickshow.cpp:424
+msgid ""
+"onto the imageviewer!\n"
+"\n"
+msgstr "auf das Bildfenster fallenlassen.\n"
+
+#: kuickshow.cpp:408 kuickshow.cpp:425 kuickshow.cpp:432
+msgid "KuickShow Drop Error"
+msgstr "KuickShow Drop Fehler"
+
+#: kuickshow.cpp:423
+msgid "You can only drop local files\n"
+msgstr "Sie können nur lokale Dateien\n"
+
+#: kuickshow.cpp:430
+msgid "You can't drop multiple files!\n"
+msgstr "Sie können nicht mehr als ein Bild fallenlassen.\n"
+
+#: kuickshow.cpp:431
+msgid ""
+"I only took the first one.\n"
+"\n"
+msgstr ""
+"Ich habe nur das erste übernommen.\n"
+"\n"
+
+#: kuickshow.cpp:506 kuickshow.cpp:592
+msgid ""
+"Really delete the file\n"
+"\n"
+msgstr ""
+"Wollen Sie die Datei\n"
+"\n"
+
+#: kuickshow.cpp:508 kuickshow.cpp:594
+msgid " ?\n"
+msgstr ""
+" \n"
+"\n"
+"wirklich löschen?\n"
+
+#: kuickshow.cpp:509 kuickshow.cpp:595
+msgid "Delete file?"
+msgstr "Datei Löschen?"
+
+#: kuickshow.cpp:510 kuickshow.cpp:596
+msgid "OK"
+msgstr "OK"
+
+#: kuickshow.cpp:510 kuickshow.cpp:596
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: kuickshow.cpp:644
+msgid "KuickShow configuration"
+msgstr "KuickShow Konfiguration"
+
+#: kuickshow.cpp:718
+msgid ""
+"Sorry, I can't delete the file\n"
+"\n"
+msgstr ""
+"Ich kann leider die Datei\n"
+"\n"
+
+#: kuickshow.cpp:720
+msgid "A more robust filemanagement will be\n"
+msgstr "Das Filemanamgement wird in späteren Version\n"
+
+#: kuickshow.cpp:721
+msgid "available, later.\n"
+msgstr "verbessert werden.\n"
+
+#: kuickshow.cpp:722
+msgid "Delete failed"
+msgstr "Löschen fehlgeschlagen"
+
+#: kuickshow.cpp:762
+msgid ""
+"Sorry, I can't load the image\n"
+"\""
+msgstr ""
+"Ich kann leider das Bild\n"
+"\""
+
+#: kuickshow.cpp:764
+msgid ""
+"\"\n"
+"Maybe it has a wrong format or your Imlib\n"
+msgstr ""
+"\"\n"
+"nicht laden. Entweder hat es ein falsches Format\n"
+
+#: kuickshow.cpp:765
+msgid "is not installed properly."
+msgstr "oder Ihre \"Imlib\" ist nicht korrekt installiert."
+
+#: kuickshow.cpp:766
+msgid "Image Error"
+msgstr "Bildfehler"
+
+#: kuickshow.cpp:799
+msgid "Can't initialize \"Imlib\".\n"
+msgstr "Ich kann \"Imlib\" nicht initialisieren.\n"
+
+#: kuickshow.cpp:800
+msgid "Start kuickshow on the commandline and look\n"
+msgstr "Starten Sie kuickshow im Terminal und beobachten\n"
+
+#: kuickshow.cpp:801
+msgid "out for some error messages.\n"
+msgstr "Sie eventuelle Fehlermeldungen.\n"
+
+#: kuickshow.cpp:802
+msgid "I will quit now."
+msgstr "KuickShow wird jetzt beendet."
+
+#: kuickshow.cpp:803
+msgid "Fatal Imlib error"
+msgstr "Fataler Imlib Fehler"
+
+#: kuickconfigdlg.cpp:17
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: kuickconfigdlg.cpp:21
+msgid "Fullscreen mode"
+msgstr "Vollbild Modus"
+
+#: kuickconfigdlg.cpp:26
+msgid "Shrink image to screensize, if larger"
+msgstr "Bild an Bildschirmgröße anpassen, falls es größer ist"
+
+#: kuickconfigdlg.cpp:32
+msgid "Preload next image"
+msgstr "Bilder im voraus laden"
+
+#: kuickconfigdlg.cpp:37
+msgid "Show only files with extension: "
+msgstr "Nur diese Erweiterungen anzeigen: "
+
+#: kuickconfigdlg.cpp:46
+msgid "Slideshow delay (ms): "
+msgstr "Pause zwischen Dias (ms): "
+
+#: kuickconfigdlg.cpp:52
+msgid "default: 3000 = 3 seconds"
+msgstr "default: 3000 = 3 Sekunden"
+
+#: kuickconfigdlg.cpp:55
+msgid "Quality / Speed"
+msgstr "Qualität / Geschwindigkeit"
+
+#: kuickconfigdlg.cpp:60
+msgid "Fast rendering"
+msgstr "Schnelles Zeichnen"
+
+#: kuickconfigdlg.cpp:64
+msgid "Dither in HiColor (15/16bit) modes"
+msgstr "In HiColor (15/16bit) Modi dithern"
+
+#: kuickconfigdlg.cpp:70
+msgid "Dither in LowColor (<=8bit) modes"
+msgstr "In LowColor (<=8bit) Modi dithern"
+
+#: kuickconfigdlg.cpp:76
+msgid "Use own color palette"
+msgstr "Eigene Farbpalette nutzen"
+
+#: kuickconfigdlg.cpp:83
+msgid "Fast palette remapping"
+msgstr "Schnelles Palettenremapping"
+
+#: kuickconfigdlg.cpp:88
+msgid "Maximum cache size (kB): "
+msgstr "Maximale Cachegröße (kB)"
+
+#: kuickconfigdlg.cpp:94
+msgid "0 = don't limit"
+msgstr "0 = keine Begrenzung"

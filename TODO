@@ -1,0 +1,10 @@
+- desktopWidth/Height should be dynamically calc'ed, not just at the beginning
+
+- if image not readable -> no nagscreen, jump to next image
+- network transparency with kfm
+- previews in browser
+
+- configurable sorting
+- small preview in browser window
+- bookmarks?
+- what else?

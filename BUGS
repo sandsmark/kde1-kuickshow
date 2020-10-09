@@ -1,0 +1,12 @@
+- printing works, but is quite broken. Printed image are stretched to fully
+  match the paper size which is not always what you want :-}
+
+- filebrowser gives lots of asserts and flickers.
+  This is because of old kdelibs, it's already fixed in current KDE 1.1 snap
+
+- somehow, the fullscreen mode doesn't work correctly, when kwm is in
+  "ShapeMode", i.e. using shaped windows from some theme.
+  fullscreen mode apparently doesn't work correctly with other windowmanagers
+
+- you can't browse multiple directories (via pageUp/down...) by opening
+  more than one image window

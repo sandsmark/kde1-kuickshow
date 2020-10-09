@@ -1,0 +1,13 @@
+all: 
+	aclocal 
+	autoheader
+	automake
+	autoconf
+	perl ./automoc
+
+dist:
+	aclocal; \
+	autoheader; \
+	automake --foreign --include-deps; \
+	autoconf; \
+	perl ./automoc

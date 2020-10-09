@@ -1,0 +1,7 @@
+Makefile.in
+Makefile
+.deps
+*.o
+gmon.out
+*.moc.cpp
+kuickshow

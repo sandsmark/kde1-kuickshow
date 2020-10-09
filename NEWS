@@ -1,0 +1,23 @@
+KuickShow 0.6.3
+- several bugfixes
+- deleting files works now (delete/shift-delete)
+- you can toggle showing hidden files
+- Home-Button in Toolbar to jump to $HOME
+- Configuration dialog is non-modal, now
+
+KuickShow 0.6.2
+- fixed a memory leak that caused X to grow and grow...
+- fixed kfile in kdelibs so that the filebrowser works much better now
+  either get a current version of kdelibs or wait for KDE 1.1
+
+KuickShow 0.6.1.1
+- added polish translation (thanks to Dariusz PAWLAK <darekp@lib.amu.edu.pl>)
+
+KuickShow 0.6
+- added some configure-checks to properly find Imlib
+- preloading of images (speeds up viewing a LOT)
+- better support for 8bit-displays (but beware, see BUGS)
+- preliminary printing support (Imlib is a bit broken in this regard)
+- sessionmanagement works properly now
+- zoom via shift + mousedrag
+- moving image via mousedrag

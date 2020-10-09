@@ -1,0 +1,58 @@
+%define version KUICKSHOWVERSION
+%define release 1
+%define serial	1
+%define prefix	/opt/kde
+
+Summary:	KuickShow
+Name:		kuickshow
+Version:	%{version}
+Release:	%{release}
+Serial:		%{serial}
+Source:		kuickshow-%{version}.tar.gz
+URL:		http://www.millenniumx.de/kuickshow.html
+Copyright:	GPL
+Packager:	Carsten Pfeiffer <carpdjih@sp.zrz.tu-berlin.de>
+Group:		X11/KDE
+BuildRoot:	/tmp/kuickshow-%{version}-root
+Prefix:		%{prefix}
+Requires: 	qtlib >= 1.40 imlib
+
+%description
+KuickShow is a fast and comfortable imagebrowser /-viewer for the KDE.
+It is based on Imlib and therefore loads many imageformats pretty fast,
+e.g. jpeg, gif, tiff, png, xpm, xbm, ...
+
+KuickShow has a clever user interface, that allows you to browse large amounts
+of images in a short time. It can zoom, mirror, rotate images, adjust
+brightness, contrast and gamma and can do a slideshow, of course.
+It is fully configurable thru GUI dialogs.
+
+Besides that, it offers a nice filebrowser with basic filemanager capabilities
+like renaming, deleting, creating directories, ...
+
+Install with '--prefix $KDEDIR' unless you have KDE in /opt/kde
+
+%prep
+
+%setup -n kuickshow-%{version}
+
+%build
+CXXFLAGS="$RPM_OPT_FLAGS" LDFLAGS=-s ./configure --with-install-root=$RPM_BUILD_ROOT
+make
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make prefix=$RPM_BUILD_ROOT/%{prefix} KDEDIR=$RPM_BUILD_ROOT/%{prefix} install
+
+cd $RPM_BUILD_ROOT
+
+find . -type d | sed '1,2d;s,^\.,\%attr(-\,root\,root) \%dir ,' > $RPM_BUILD_DIR/file.list.%{name}
+
+find . -type f | sed 's,^\.,\%attr(-\,root\,root) ,' >> $RPM_BUILD_DIR/file.list.%{name}
+
+find . -type l | sed 's,^\.,\%attr(-\,root\,root) ,' >> $RPM_BUILD_DIR/file.list.%{name}
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files -f ../file.list.%{name}

@@ -1,0 +1,391 @@
+imlibwidget.h:124: warning: `class ImlibWidget' has pointer data members
+imlibwidget.h:124: warning:   but does not override `ImlibWidget(const ImlibWidget&)'
+imlibwidget.h:124: warning:   or `operator=(const ImlibWidget&)'
+kurlwidget.h:38: warning: `class KURLWidget' has pointer data members
+kurlwidget.h:38: warning:   but does not override `KURLWidget(const KURLWidget&)'
+kurlwidget.h:38: warning:   or `operator=(const KURLWidget&)'
+aboutwidget.h:56: warning: `class AboutWidget' has pointer data members
+aboutwidget.h:56: warning:   but does not override `AboutWidget(const AboutWidget&)'
+aboutwidget.h:56: warning:   or `operator=(const AboutWidget&)'
+aboutwidget.cpp: In method `AboutWidget::AboutWidget(class QWidget * = 0, const char * = 0)':
+aboutwidget.cpp:19: warning: `AboutWidget::GBox' should be initialized in the member initialization list
+aboutwidget.cpp:19: warning: `AboutWidget::Logo' should be initialized in the member initialization list
+aboutwidget.cpp:19: warning: `AboutWidget::Tux' should be initialized in the member initialization list
+aboutwidget.cpp:19: warning: `AboutWidget::Version' should be initialized in the member initialization list
+aboutwidget.cpp:19: warning: `AboutWidget::Authors' should be initialized in the member initialization list
+aboutwidget.cpp:19: warning: `AboutWidget::Thorsten' should be initialized in the member initialization list
+aboutwidget.cpp:19: warning: `AboutWidget::Carsten' should be initialized in the member initialization list
+aboutwidget.cpp:19: warning: `AboutWidget::Copy' should be initialized in the member initialization list
+aboutwidget.cpp:19: warning: `AboutWidget::pm' should be initialized in the member initialization list
+aboutwidget.cpp:19: warning: `AboutWidget::Homepage' should be initialized in the member initialization list
+aboutwidget.cpp:19: warning: `AboutWidget::im' should be initialized in the member initialization list
+editdlg.h: At top level:
+editdlg.h:23: warning: `class EditDialog' has pointer data members
+editdlg.h:23: warning:   but does not override `EditDialog(const EditDialog&)'
+editdlg.h:23: warning:   or `operator=(const EditDialog&)'
+editdlg.cpp: In method `EditDialog::EditDialog(class QString = 0, const char * = 0, const char * = 0, class QWidget * = 0, const char * = 0, bool = false)':
+editdlg.cpp:10: warning: `EditDialog::le' should be initialized in the member initialization list
+editdlg.h:23: warning: `class EditDialog' has pointer data members
+editdlg.h:23: warning:   but does not override `EditDialog(const EditDialog&)'
+editdlg.h:23: warning:   or `operator=(const EditDialog&)'
+kfileview.h:65: warning: `class KFileView' has pointer data members
+kfileview.h:65: warning:   but does not override `KFileView(const KFileView&)'
+kfileview.h:65: warning:   or `operator=(const KFileView&)'
+fileview.h:57: warning: `class FileView' has pointer data members
+fileview.h:57: warning:   but does not override `FileView(const FileView&)'
+fileview.h:57: warning:   or `operator=(const FileView&)'
+fileview.cpp: In method `FileView::FileView(class QString, bool, int, int, const char *, class QWidget * = 0, const char * = 0)':
+fileview.cpp:26: warning: `FileView::menu' should be initialized in the member initialization list
+fileview.cpp:26: warning: `FileView::kfm' should be initialized in the member initialization list
+fileview.cpp:26: warning: `FileView::viewItem' should be initialized in the member initialization list
+fileview.cpp:26: warning: `FileView::renameItem' should be initialized in the member initialization list
+fileview.cpp:26: warning: `FileView::deleteItem' should be initialized in the member initialization list
+fileview.cpp:26: warning: `FileView::printItem' should be initialized in the member initialization list
+fileview.cpp:26: warning: `FileView::propertiesItem' should be initialized in the member initialization list
+fileview.cpp:26: warning: `FileView::cdirItem' should be initialized in the member initialization list
+fileview.cpp:26: warning: `FileView::showsHidden' should be initialized in the member initialization list
+imlibwidget.h:124: warning: `class ImlibWidget' has pointer data members
+imlibwidget.h:124: warning:   but does not override `ImlibWidget(const ImlibWidget&)'
+imlibwidget.h:124: warning:   or `operator=(const ImlibWidget&)'
+kurlwidget.h:38: warning: `class KURLWidget' has pointer data members
+kurlwidget.h:38: warning:   but does not override `KURLWidget(const KURLWidget&)'
+kurlwidget.h:38: warning:   or `operator=(const KURLWidget&)'
+aboutwidget.h:56: warning: `class AboutWidget' has pointer data members
+aboutwidget.h:56: warning:   but does not override `AboutWidget(const AboutWidget&)'
+aboutwidget.h:56: warning:   or `operator=(const AboutWidget&)'
+editdlg.h: At top level:
+editdlg.h:23: warning: `class EditDialog' has pointer data members
+editdlg.h:23: warning:   but does not override `EditDialog(const EditDialog&)'
+editdlg.h:23: warning:   or `operator=(const EditDialog&)'
+kfileview.h:65: warning: `class KFileView' has pointer data members
+kfileview.h:65: warning:   but does not override `KFileView(const KFileView&)'
+kfileview.h:65: warning:   or `operator=(const KFileView&)'
+fileview.h:57: warning: `class FileView' has pointer data members
+fileview.h:57: warning:   but does not override `FileView(const FileView&)'
+fileview.h:57: warning:   or `operator=(const FileView&)'
+imlibwidget.h:124: warning: `class ImlibWidget' has pointer data members
+imlibwidget.h:124: warning:   but does not override `ImlibWidget(const ImlibWidget&)'
+imlibwidget.h:124: warning:   or `operator=(const ImlibWidget&)'
+kfileview.h:65: warning: `class KFileView' has pointer data members
+kfileview.h:65: warning:   but does not override `KFileView(const KFileView&)'
+kfileview.h:65: warning:   or `operator=(const KFileView&)'
+logotabdialog.h:49: warning: `class LogoTabDialog' has pointer data members
+logotabdialog.h:49: warning:   but does not override `LogoTabDialog(const LogoTabDialog&)'
+logotabdialog.h:49: warning:   or `operator=(const LogoTabDialog&)'
+kuickconfigdlg.h:53: warning: `class KuickConfigDialog' has pointer data members
+kuickconfigdlg.h:53: warning:   but does not override `KuickConfigDialog(const KuickConfigDialog&)'
+kuickconfigdlg.h:53: warning:   or `operator=(const KuickConfigDialog&)'
+imlibwidget.h:124: warning: `class ImlibWidget' has pointer data members
+imlibwidget.h:124: warning:   but does not override `ImlibWidget(const ImlibWidget&)'
+imlibwidget.h:124: warning:   or `operator=(const ImlibWidget&)'
+kurlwidget.h:38: warning: `class KURLWidget' has pointer data members
+kurlwidget.h:38: warning:   but does not override `KURLWidget(const KURLWidget&)'
+kurlwidget.h:38: warning:   or `operator=(const KURLWidget&)'
+aboutwidget.h:56: warning: `class AboutWidget' has pointer data members
+aboutwidget.h:56: warning:   but does not override `AboutWidget(const AboutWidget&)'
+aboutwidget.h:56: warning:   or `operator=(const AboutWidget&)'
+kfileview.h:65: warning: `class KFileView' has pointer data members
+kfileview.h:65: warning:   but does not override `KFileView(const KFileView&)'
+kfileview.h:65: warning:   or `operator=(const KFileView&)'
+fileview.h:57: warning: `class FileView' has pointer data members
+fileview.h:57: warning:   but does not override `FileView(const FileView&)'
+fileview.h:57: warning:   or `operator=(const FileView&)'
+logotabdialog.h:49: warning: `class LogoTabDialog' has pointer data members
+logotabdialog.h:49: warning:   but does not override `LogoTabDialog(const LogoTabDialog&)'
+logotabdialog.h:49: warning:   or `operator=(const LogoTabDialog&)'
+kuickconfigdlg.h:53: warning: `class KuickConfigDialog' has pointer data members
+kuickconfigdlg.h:53: warning:   but does not override `KuickConfigDialog(const KuickConfigDialog&)'
+kuickconfigdlg.h:53: warning:   or `operator=(const KuickConfigDialog&)'
+kuickdata.h:32: warning: `class KuickData' has pointer data members
+kuickdata.h:32: warning:   but does not override `KuickData(const KuickData&)'
+kuickdata.h:32: warning:   or `operator=(const KuickData&)'
+mainwidget.h:36: warning: `class MainWidget' has pointer data members
+mainwidget.h:36: warning:   but does not override `MainWidget(const MainWidget&)'
+mainwidget.h:36: warning:   or `operator=(const MainWidget&)'
+kuickshow.h:99: warning: `class KuickShow' has pointer data members
+kuickshow.h:99: warning:   but does not override `KuickShow(const KuickShow&)'
+kuickshow.h:99: warning:   or `operator=(const KuickShow&)'
+kurlwidget.h:38: warning: `class KURLWidget' has pointer data members
+kurlwidget.h:38: warning:   but does not override `KURLWidget(const KURLWidget&)'
+kurlwidget.h:38: warning:   or `operator=(const KURLWidget&)'
+logotabdialog.h:49: warning: `class LogoTabDialog' has pointer data members
+logotabdialog.h:49: warning:   but does not override `LogoTabDialog(const LogoTabDialog&)'
+logotabdialog.h:49: warning:   or `operator=(const LogoTabDialog&)'
+kfileview.h:65: warning: `class KFileView' has pointer data members
+kfileview.h:65: warning:   but does not override `KFileView(const KFileView&)'
+kfileview.h:65: warning:   or `operator=(const KFileView&)'
+fileview.h:57: warning: `class FileView' has pointer data members
+fileview.h:57: warning:   but does not override `FileView(const FileView&)'
+fileview.h:57: warning:   or `operator=(const FileView&)'
+kuickdata.h:32: warning: `class KuickData' has pointer data members
+kuickdata.h:32: warning:   but does not override `KuickData(const KuickData&)'
+kuickdata.h:32: warning:   or `operator=(const KuickData&)'
+mainwidget.h:36: warning: `class MainWidget' has pointer data members
+mainwidget.h:36: warning:   but does not override `MainWidget(const MainWidget&)'
+mainwidget.h:36: warning:   or `operator=(const MainWidget&)'
+imlibconfig.cpp: In method `ImlibConfig::ImlibConfig()':
+imlibconfig.cpp:18: warning: `ImlibConfig::fullScreen' should be initialized in the member initialization list
+imlibconfig.cpp:18: warning: `ImlibConfig::shrinkToScreen' should be initialized in the member initialization list
+imlibconfig.cpp:18: warning: `ImlibConfig::ownPalette' should be initialized in the member initialization list
+imlibconfig.cpp:18: warning: `ImlibConfig::fastRemap' should be initialized in the member initialization list
+imlibconfig.cpp:18: warning: `ImlibConfig::fastRender' should be initialized in the member initialization list
+imlibconfig.cpp:18: warning: `ImlibConfig::dither16bit' should be initialized in the member initialization list
+imlibconfig.cpp:18: warning: `ImlibConfig::dither8bit' should be initialized in the member initialization list
+imlibconfig.cpp:18: warning: `ImlibConfig::gamma' should be initialized in the member initialization list
+imlibconfig.cpp:18: warning: `ImlibConfig::brightness' should be initialized in the member initialization list
+imlibconfig.cpp:18: warning: `ImlibConfig::contrast' should be initialized in the member initialization list
+imlibconfig.cpp:18: warning: `ImlibConfig::gammaFactor' should be initialized in the member initialization list
+imlibconfig.cpp:18: warning: `ImlibConfig::brightnessFactor' should be initialized in the member initialization list
+imlibconfig.cpp:18: warning: `ImlibConfig::contrastFactor' should be initialized in the member initialization list
+imlibconfig.cpp:18: warning: `ImlibConfig::maxCache' should be initialized in the member initialization list
+imlibwidget.h:124: warning: `class ImlibWidget' has pointer data members
+imlibwidget.h:124: warning:   but does not override `ImlibWidget(const ImlibWidget&)'
+imlibwidget.h:124: warning:   or `operator=(const ImlibWidget&)'
+imlibwidget.cpp: In method `ImlibWidget::ImlibWidget(const char *, class ImlibConfig * = 0, class QWidget * = 0, const char * = 0)':
+imlibwidget.cpp:32: warning: `ImlibWidget::isFullscreen' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::idata' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::itemViewerZoomIn' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::itemViewerZoomOut' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::itemViewerFlipH' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::itemRotate90' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::itemRotate270' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::itemViewerFlipV' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::itemViewerPrint' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::itemViewerSave' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::desktopWidth' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::desktopHeight' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::xmove' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::ymove' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::xpos' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::ypos' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::xzoom' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::yzoom' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::xposPress' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::yposPress' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::stillResizing' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::deleteImlibConfig' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::deleteImlibData' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::imlibModifierChanged' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::shiftPressed' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::viewerMenu' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::gammaMenu' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::brightnessMenu' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::contrastMenu' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::currentFilename' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::transWidget' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::disp' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::id' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::win' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::p' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::m' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::im' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::imCache' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::mod' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::cw' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::ch' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::w' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::h' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::wCache' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::hCache' should be initialized in the member initialization list
+imlibwidget.cpp:32: warning: `ImlibWidget::cachedImage' should be initialized in the member initialization list
+imlibwidget.cpp: In method `ImlibWidget::ImlibWidget(const char *, class ImlibConfig *, struct ImlibData *, class QWidget * = 0, const char * = 0)':
+imlibwidget.cpp:71: warning: `ImlibWidget::isFullscreen' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::idata' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::itemViewerZoomIn' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::itemViewerZoomOut' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::itemViewerFlipH' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::itemRotate90' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::itemRotate270' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::itemViewerFlipV' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::itemViewerPrint' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::itemViewerSave' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::desktopWidth' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::desktopHeight' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::xmove' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::ymove' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::xpos' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::ypos' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::xzoom' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::yzoom' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::xposPress' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::yposPress' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::stillResizing' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::deleteImlibConfig' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::deleteImlibData' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::imlibModifierChanged' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::shiftPressed' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::viewerMenu' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::gammaMenu' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::brightnessMenu' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::contrastMenu' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::currentFilename' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::transWidget' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::disp' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::id' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::win' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::p' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::m' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::im' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::imCache' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::mod' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::cw' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::ch' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::w' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::h' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::wCache' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::hCache' should be initialized in the member initialization list
+imlibwidget.cpp:71: warning: `ImlibWidget::cachedImage' should be initialized in the member initialization list
+kfileview.h:65: warning: `class KFileView' has pointer data members
+kfileview.h:65: warning:   but does not override `KFileView(const KFileView&)'
+kfileview.h:65: warning:   or `operator=(const KFileView&)'
+kfileview.cpp: In method `KFileView::KFileView(class QString, bool, int, int, const char * = "*", class QWidget * = 0, const char * = 0)':
+kfileview.cpp:24: warning: `KFileView::viewDir' should be initialized in the member initialization list
+kuickdata.h:32: warning: `class KuickData' has pointer data members
+kuickdata.h:32: warning:   but does not override `KuickData(const KuickData&)'
+kuickdata.h:32: warning:   or `operator=(const KuickData&)'
+kuickdata.cpp: In method `KuickData::KuickData()':
+kuickdata.cpp:19: warning: `KuickData::fileFilter' should be initialized in the member initialization list
+kuickdata.cpp:19: warning: `KuickData::slideDelay' should be initialized in the member initialization list
+kuickdata.cpp:19: warning: `KuickData::preloadImage' should be initialized in the member initialization list
+kuickdata.cpp:19: warning: `KuickData::idata' should be initialized in the member initialization list
+imlibwidget.h:124: warning: `class ImlibWidget' has pointer data members
+imlibwidget.h:124: warning:   but does not override `ImlibWidget(const ImlibWidget&)'
+imlibwidget.h:124: warning:   or `operator=(const ImlibWidget&)'
+kurlwidget.h:38: warning: `class KURLWidget' has pointer data members
+kurlwidget.h:38: warning:   but does not override `KURLWidget(const KURLWidget&)'
+kurlwidget.h:38: warning:   or `operator=(const KURLWidget&)'
+aboutwidget.h:56: warning: `class AboutWidget' has pointer data members
+aboutwidget.h:56: warning:   but does not override `AboutWidget(const AboutWidget&)'
+aboutwidget.h:56: warning:   or `operator=(const AboutWidget&)'
+kfileview.h:65: warning: `class KFileView' has pointer data members
+kfileview.h:65: warning:   but does not override `KFileView(const KFileView&)'
+kfileview.h:65: warning:   or `operator=(const KFileView&)'
+fileview.h:57: warning: `class FileView' has pointer data members
+fileview.h:57: warning:   but does not override `FileView(const FileView&)'
+fileview.h:57: warning:   or `operator=(const FileView&)'
+logotabdialog.h:49: warning: `class LogoTabDialog' has pointer data members
+logotabdialog.h:49: warning:   but does not override `LogoTabDialog(const LogoTabDialog&)'
+logotabdialog.h:49: warning:   or `operator=(const LogoTabDialog&)'
+kuickconfigdlg.h:53: warning: `class KuickConfigDialog' has pointer data members
+kuickconfigdlg.h:53: warning:   but does not override `KuickConfigDialog(const KuickConfigDialog&)'
+kuickconfigdlg.h:53: warning:   or `operator=(const KuickConfigDialog&)'
+kuickdata.h:32: warning: `class KuickData' has pointer data members
+kuickdata.h:32: warning:   but does not override `KuickData(const KuickData&)'
+kuickdata.h:32: warning:   or `operator=(const KuickData&)'
+mainwidget.h:36: warning: `class MainWidget' has pointer data members
+mainwidget.h:36: warning:   but does not override `MainWidget(const MainWidget&)'
+mainwidget.h:36: warning:   or `operator=(const MainWidget&)'
+kuickshow.h:99: warning: `class KuickShow' has pointer data members
+kuickshow.h:99: warning:   but does not override `KuickShow(const KuickShow&)'
+kuickshow.h:99: warning:   or `operator=(const KuickShow&)'
+kuickshow.cpp: In method `KuickShow::KuickShow(class QString = "", const char * = 0)':
+kuickshow.cpp:40: warning: `KuickShow::viewItem' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::renameItem' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::deleteItem' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::printItem' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::viewerCount' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::noBrowser' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::highlightWorkaround' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::aboutWidget' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::mainWidget' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::menu' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::oldSlideName' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::finder' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::box' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::tBar' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::sBar' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::dialog' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::kdata' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::id' should be initialized in the member initialization list
+kuickshow.cpp:40: warning: `KuickShow::viewer' should be initialized in the member initialization list
+logotabdialog.h:49: warning: `class LogoTabDialog' has pointer data members
+logotabdialog.h:49: warning:   but does not override `LogoTabDialog(const LogoTabDialog&)'
+logotabdialog.h:49: warning:   or `operator=(const LogoTabDialog&)'
+kuickconfigdlg.h:53: warning: `class KuickConfigDialog' has pointer data members
+kuickconfigdlg.h:53: warning:   but does not override `KuickConfigDialog(const KuickConfigDialog&)'
+kuickconfigdlg.h:53: warning:   or `operator=(const KuickConfigDialog&)'
+kuickconfigdlg.cpp: In method `KuickConfigDialog::KuickConfigDialog(class QWidget * = 0, const char * = 0, bool = true)':
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::TOPMARGIN' should be initialized in the member initialization list
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::MARGIN' should be initialized in the member initialization list
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::gbox1' should be initialized in the member initialization list
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::gbox2' should be initialized in the member initialization list
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::cbFullscreen' should be initialized in the member initialization list
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::cbShrinkToScreen' should be initialized in the member initialization list
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::cbRemap' should be initialized in the member initialization list
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::cbFastrender' should be initialized in the member initialization list
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::cbDither16bit' should be initialized in the member initialization list
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::cbDither8bit' should be initialized in the member initialization list
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::cbPreload' should be initialized in the member initialization list
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::cbOwnPalette' should be initialized in the member initialization list
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::editFilter' should be initialized in the member initialization list
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::editSlide' should be initialized in the member initialization list
+kuickconfigdlg.cpp:10: warning: `KuickConfigDialog::editMaxCache' should be initialized in the member initialization list
+kurlwidget.h:38: warning: `class KURLWidget' has pointer data members
+kurlwidget.h:38: warning:   but does not override `KURLWidget(const KURLWidget&)'
+kurlwidget.h:38: warning:   or `operator=(const KURLWidget&)'
+kurlwidget.cpp: In method `KURLWidget::KURLWidget(char *, class QWidget *, const char * = 0)':
+kurlwidget.cpp:15: warning: `KURLWidget::kfm' should be initialized in the member initialization list
+kurlwidget.cpp:15: warning: `KURLWidget::u' should be initialized in the member initialization list
+logotabdialog.h:49: warning: `class LogoTabDialog' has pointer data members
+logotabdialog.h:49: warning:   but does not override `LogoTabDialog(const LogoTabDialog&)'
+logotabdialog.h:49: warning:   or `operator=(const LogoTabDialog&)'
+logotabdialog.cpp: In method `LogoTabDialog::LogoTabDialog(class QWidget * = 0, const char * = 0, bool = true, bool = false)':
+logotabdialog.cpp:16: warning: `LogoTabDialog::hasWidget' should be initialized in the member initialization list
+logotabdialog.cpp:16: warning: `LogoTabDialog::w' should be initialized in the member initialization list
+logotabdialog.cpp:16: warning: `LogoTabDialog::Logo' should be initialized in the member initialization list
+logotabdialog.cpp: In method `LogoTabDialog::LogoTabDialog(const char **, class QWidget * = 0, const char * = 0, bool = true)':
+logotabdialog.cpp:33: warning: `LogoTabDialog::hasWidget' should be initialized in the member initialization list
+logotabdialog.cpp:33: warning: `LogoTabDialog::w' should be initialized in the member initialization list
+logotabdialog.cpp:33: warning: `LogoTabDialog::Logo' should be initialized in the member initialization list
+logotabdialog.cpp: In method `LogoTabDialog::LogoTabDialog(const char **, uint, uint, class QWidget * = 0, const char * = 0, bool = true)':
+logotabdialog.cpp:43: warning: `LogoTabDialog::hasWidget' should be initialized in the member initialization list
+logotabdialog.cpp:43: warning: `LogoTabDialog::w' should be initialized in the member initialization list
+logotabdialog.cpp:43: warning: `LogoTabDialog::Logo' should be initialized in the member initialization list
+logotabdialog.cpp: In method `LogoTabDialog::LogoTabDialog(uint, uint, class QWidget * = 0, const char * = 0, bool = true)':
+logotabdialog.cpp:53: warning: `LogoTabDialog::hasWidget' should be initialized in the member initialization list
+logotabdialog.cpp:53: warning: `LogoTabDialog::w' should be initialized in the member initialization list
+logotabdialog.cpp:53: warning: `LogoTabDialog::Logo' should be initialized in the member initialization list
+imlibwidget.h:124: warning: `class ImlibWidget' has pointer data members
+imlibwidget.h:124: warning:   but does not override `ImlibWidget(const ImlibWidget&)'
+imlibwidget.h:124: warning:   or `operator=(const ImlibWidget&)'
+kurlwidget.h:38: warning: `class KURLWidget' has pointer data members
+kurlwidget.h:38: warning:   but does not override `KURLWidget(const KURLWidget&)'
+kurlwidget.h:38: warning:   or `operator=(const KURLWidget&)'
+aboutwidget.h:56: warning: `class AboutWidget' has pointer data members
+aboutwidget.h:56: warning:   but does not override `AboutWidget(const AboutWidget&)'
+aboutwidget.h:56: warning:   or `operator=(const AboutWidget&)'
+kfileview.h:65: warning: `class KFileView' has pointer data members
+kfileview.h:65: warning:   but does not override `KFileView(const KFileView&)'
+kfileview.h:65: warning:   or `operator=(const KFileView&)'
+fileview.h:57: warning: `class FileView' has pointer data members
+fileview.h:57: warning:   but does not override `FileView(const FileView&)'
+fileview.h:57: warning:   or `operator=(const FileView&)'
+logotabdialog.h:49: warning: `class LogoTabDialog' has pointer data members
+logotabdialog.h:49: warning:   but does not override `LogoTabDialog(const LogoTabDialog&)'
+logotabdialog.h:49: warning:   or `operator=(const LogoTabDialog&)'
+kuickconfigdlg.h:53: warning: `class KuickConfigDialog' has pointer data members
+kuickconfigdlg.h:53: warning:   but does not override `KuickConfigDialog(const KuickConfigDialog&)'
+kuickconfigdlg.h:53: warning:   or `operator=(const KuickConfigDialog&)'
+kuickdata.h:32: warning: `class KuickData' has pointer data members
+kuickdata.h:32: warning:   but does not override `KuickData(const KuickData&)'
+kuickdata.h:32: warning:   or `operator=(const KuickData&)'
+mainwidget.h:36: warning: `class MainWidget' has pointer data members
+mainwidget.h:36: warning:   but does not override `MainWidget(const MainWidget&)'
+mainwidget.h:36: warning:   or `operator=(const MainWidget&)'
+kuickshow.h:99: warning: `class KuickShow' has pointer data members
+kuickshow.h:99: warning:   but does not override `KuickShow(const KuickShow&)'
+kuickshow.h:99: warning:   or `operator=(const KuickShow&)'
+kfileview.h:65: warning: `class KFileView' has pointer data members
+kfileview.h:65: warning:   but does not override `KFileView(const KFileView&)'
+kfileview.h:65: warning:   or `operator=(const KFileView&)'
+fileview.h:57: warning: `class FileView' has pointer data members
+fileview.h:57: warning:   but does not override `FileView(const FileView&)'
+fileview.h:57: warning:   or `operator=(const FileView&)'
+kuickdata.h:32: warning: `class KuickData' has pointer data members
+kuickdata.h:32: warning:   but does not override `KuickData(const KuickData&)'
+kuickdata.h:32: warning:   or `operator=(const KuickData&)'
+mainwidget.h:36: warning: `class MainWidget' has pointer data members
+mainwidget.h:36: warning:   but does not override `MainWidget(const MainWidget&)'
+mainwidget.h:36: warning:   or `operator=(const MainWidget&)'
+mainwidget.cpp: In method `MainWidget::MainWidget(class QString, class KuickData *, class QWidget *, const char * = 0)':
+mainwidget.cpp:5: warning: `MainWidget::box' should be initialized in the member initialization list

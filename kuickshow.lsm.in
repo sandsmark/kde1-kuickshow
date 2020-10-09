@@ -1,0 +1,14 @@
+Begin3
+Title:          KuickShow
+Version:        KUICKSHOWVERSION
+Entered-date:   KUICKSHOWDATE
+Description:    A comfortable image browser/viewer, based on Imlib
+Keywords:       KDE, Qt, X11, Image viewer, Imlib
+Author:         Carsten Pfeiffer <carpdjih@sp.zrz.tu-berlin.de>
+Maintained-by:  Carsten Pfeiffer <carpdjih@sp.zrz.tu-berlin.de>
+Primary-site:   http://www.millenniumx.de/kuickshow.html
+Alternate-site: ftp://ftp.kde.org/put/kde/stable/apps/graphics
+Original-site:  http://www.millenniumx.de
+Platforms:      Unix. Needs Qt, KDE libs and Imlib
+Copying-policy: GPL
+End

@@ -1,0 +1,14 @@
+# KDE Config File 
+[KDE Desktop Entry]
+Name=KuickShow
+Exec=kuickshow -caption "%c" %i %m %f
+Icon=kuickshow.xpm
+Type=Application
+BinaryPattern=kuickshow;
+MimeType=image/gif;image/x-xpm;image/x-xbm;image/jpeg;
+DocPath=kuickshow/index.html
+Comment=A comfortable image viewer
+Comment[de]=Ein komfortabler  Bildbetrachter
+Comment[pl]=Wspania³y pokazywacz obrazków
+Terminal=0
+MiniIcon=kuickshow.xpm

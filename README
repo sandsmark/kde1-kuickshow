@@ -1,0 +1,80 @@
+KuickShow v0.5 by
+Carsten Pfeiffer <carpdjih@sp.zrz.tu-berlin.de>
+-----------------------------------------------
+
+KuickShow is a comfortable image browser/viewer. It displays a filebrowser
+where you can select (doubleclick, Return-key or "view" in popupmenu) files
+which are then shown.
+Images can be displayed either in an own window, as large as the image,
+or fullscreen. This is configurable in the options dialog.
+
+The options dialog has some more possibilities:
+- images can be automatically shrunk to fit onto the screen, if they are larger
+- you can set the delay time for a slide show
+- you can tell the browser which filetypes to show
+- you can tweak the speed/quality ratio
+
+Once an image is shown, you don't have to return to the filebrowser, to view
+the next: just press "PageDown" to view the next image in the filebrowser.
+"PageUp" gives you the previous one. Of course, "Home" and "End" bring you
+to the first and last image.
+Note, that the filebrowser always highlights the file, that you is actually
+displayed.
+
+You can display more than one image at a time, by selecting one image, and
+another one, and one more, and ...
+It will be more fun, if you are not in fullscreen mode, tho ;o)
+
+If you look for a certain file, just enter the first characters of its
+filename (in the browser). A small edit window pops up in the bottom-right
+corner. Once a matching file is found, it is highlighted. Leave the
+edit-window by pressing Return or Escape.
+
+
+Keyboard shortcuts:
+-------------------
+Press "+" to zoom into the image, "-" to unzoom.
+Press "*" to flip the image horizontally, "/" to flip it vertically
+Press "7" to rotate the image 270 degrees clockwise ( = 90 degrees
+          counterclockwise or "9" to rotate the image 90 degrees clockwise
+Use the arrow keys to move the image (or rather you, the viewer:
+    e.g. left arrow moves you to the left -> the image is moved to the right)
+BTW, have you tried moving the image around with the mouse? Just grab and move.
+"Return" toggles between fullscreen and window mode.
+"Space" shows/hides the filebrowser (you can only hide the browser, if an image
+        is shown).
+c,C give you more/less contrast on an image,
+b/B more/less brightness,
+g/G more/less gamma
+Ctrl-s saves am image,
+delete deletes an image, shift delete doesn't ask before deleting
+Enter rerenders the image in original settings/size
+
+Finally, "Esc" brings you back to the browser.
+"Ctrl-g" - goto - in the filebrowser let's you quickly change the directory
+without having to browse all the way to it.
+Ctrl-q quits KuickShow
+
+If you don't like those keybings, I'm gonna make them configurable, soon.
+
+Commandline parameters:
+-----------------------
+You can pass KuickShow a commandline parameter:
+start it as
+
+kuickshow /home/user/images/bla.jpg
+
+The image bla.jpg will be displayed and the browser will show you the 
+directory contents of /home/user/images. The browser is hidden, until you hit
+the space bar, tho.
+
+If you just give a directory as commandline, e.g.
+
+kuickshow /usr/local/images
+
+it will just open that directory.
+You can also drop images from kfm onto the image viewer (not the filebrowser).
+
+
+Carsten Pfeiffer <carpdjih@sp.zrz.tu-berlin.de>
+                 <pfeiffer@kde.org>
