@@ -12,7 +12,7 @@
 #ifndef IMLIBWIDGET_H
 #define IMLIBWIDGET_H
 
-#include <Imlib.h>
+#include <Imlib2.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/extensions/shape.h>
@@ -62,7 +62,10 @@ protected:
   void           changeBrightness( int, bool rerender = true );
   void 		 changeContrast( int, bool rerender = true );
   void 		 changeGamma( int, bool rerender = true );
-  void           setImageModifier() { Imlib_set_image_modifier( id, im, &mod ); }
+  void           setImageModifier() {
+      imlib_context_set_image(im);
+      imlib_context_set_color_modifier(mod);
+  }
 
   void 		 closeEvent( QCloseEvent * );
   void           resizeEvent( QResizeEvent * );
@@ -92,8 +95,8 @@ protected:
   Window         win;
   Pixmap         p;
   Pixmap         m;
-  ImlibImage     *im, *imCache;
-  ImlibColorModifier mod;
+  Imlib_Image     im, imCache;
+  Imlib_Color_Modifier mod;
   uint 		 cw, ch;
   uint 		 w, h, wCache, hCache;
   QString	 cachedImage;
@@ -119,7 +122,7 @@ protected slots:
 
 signals:
   void 		 sigBadImage( const char * );
-  void 		 sigPrintImage( ImlibImage *, QString );
+  void 		 sigPrintImage( Imlib_Image *, QString );
 
 };
 

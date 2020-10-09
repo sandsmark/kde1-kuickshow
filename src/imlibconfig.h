@@ -13,6 +13,7 @@
 #define IMBLIBCONFIG_H
 
 #include <kconfig.h>
+typedef void*ImlibData ;
 
 class ImlibConfig
 {

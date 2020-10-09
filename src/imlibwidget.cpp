@@ -60,7 +60,7 @@ ImlibWidget::ImlibWidget( const char *filename, ImlibConfig *_idata, QWidget *pa
     par.pixmapcachesize = maxcache * 1024;
   }
 
-  id = Imlib_init_with_params( disp, &par );
+  //id = Imlib_init_with_params( disp, &par );
 
   init( filename, id );
 }
@@ -99,7 +99,7 @@ void ImlibWidget::init( const char *filename, ImlibData *_id )
   setBackgroundMode( PaletteBackground );
 
   id = _id;
-  Imlib_get_image_modifier( id, im, &mod );
+  mod = imlib_create_color_modifier();
 
   win = XCreateSimpleWindow(disp, winId(), 0,0,w,h,0,0,0);
 
@@ -124,8 +124,10 @@ bool ImlibWidget::loadImageInternal( char *file, bool cacheOnly )
 {
   uint myW, myH;
 
-  ImlibImage *myIm = Imlib_load_image( id, file );
+  Imlib_Image myIm = imlib_load_image_immediately( file );
   if ( !myIm ) return false; // couldn't load file, probably wrong format
+
+  imlib_context_set_image(myIm);
 
   mod.brightness = idata->brightness;
   mod.contrast = idata->contrast;
@@ -134,7 +136,7 @@ bool ImlibWidget::loadImageInternal( char *file, bool cacheOnly )
   // only set image modifier if image is not already cached
   // otherwise cache would be lost
   if ( myIm != imCache )
-    Imlib_set_image_modifier( id, myIm, &mod );
+      imlib_context_set_color_modifier(mod);
 
   myW = myIm->rgb_width;
   myH = myIm->rgb_height;
@@ -157,21 +159,21 @@ bool ImlibWidget::loadImageInternal( char *file, bool cacheOnly )
     }
   }
 
-  if ( cacheOnly )
-  {
-    imCache = myIm;
-    wCache  = myW;
-    hCache  = myH;
-    Imlib_render( id, imCache, wCache, hCache );
-    Pixmap tmp = Imlib_move_image( id, imCache );
-    Imlib_free_pixmap( id, tmp ); // free the pixmap to avoid a memleak
-  }
-  else
-  {
+  //if ( cacheOnly )
+  //{
+  //  imCache = myIm;
+  //  wCache  = myW;
+  //  hCache  = myH;
+  //  Imlib_render( id, imCache, wCache, hCache );
+  //  Pixmap tmp = Imlib_move_image( id, imCache );
+  //  Imlib_free_pixmap( id, tmp ); // free the pixmap to avoid a memleak
+  //}
+  //else
+  //{
     im = myIm;
     w  = myW;
     h  = myH;
-  }
+  //}
 
   return true;
 }
@@ -443,10 +445,11 @@ void ImlibWidget::zoomImage( float factor )
 
 void ImlibWidget::flipImage( bool horizontally )
 {
+  imlib_context_set_image(im);
   if ( horizontally )
-    Imlib_flip_image_horizontal( id, im );
+      imlib_image_flip_horizontal();
   else
-    Imlib_flip_image_vertical( id, im );
+      imlib_image_flip_vertical();
 
   renderImage( w, h );
   showImage();
@@ -454,20 +457,15 @@ void ImlibWidget::flipImage( bool horizontally )
 
 void ImlibWidget::rotate( int d )
 {
-  Imlib_rotate_image( id, im, -1 ); // imlib doesn't handle that, yet
-
-  if ( d % 2 != 0 ) // d is odd, so we rotate about 90 or 270 degrees
-  {		    // -> switch w and h
-    uint wtmp = w;
-    w = h;
-    h = wtmp;
+  imlib_context_set_image(im);
+  //idk
+  double angle = 0;
+  if (d == -1) {
+      angle = 270
+  } else if (d == 1) {
+      angle = 90;
   }
-
-  // flip it to really rotate
-  if ( d == 1 )
-    Imlib_flip_image_horizontal( id, im );
-  else if ( d == -1 )
-    Imlib_flip_image_vertical( id, im );
+  imlib_rotate_image_from_buffer(im, angle);
 
 
   paintImage();
@@ -538,8 +536,11 @@ void ImlibWidget::saveImage()
   file = KFileDialog::getSaveFileName( currentFilename.data(), filter.data() );
   if ( !file.isEmpty() )
   {
-    Imlib_apply_modifiers_to_rgb( id, im );
-    if ( !Imlib_save_image( id, im, file.data(), NULL ) )
+    imlib_context_set_image(im);
+    imlib_apply_color_modifier();
+    Imlib_Load_Error err;
+    imlib_save_image_with_error_return(file.data(), &err);
+    if ( err != IMLIB_LOAD_ERROR_NONE )
     {
       QString tmp = i18n("Couldn't save the file,\n");
       tmp += i18n("maybe this disk is full, or you don't\n");
