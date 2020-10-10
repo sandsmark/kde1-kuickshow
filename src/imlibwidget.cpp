@@ -90,15 +90,14 @@ ImlibWidget::ImlibWidget( const char *filename, ImlibConfig *_idata, QWidget *pa
 
 void ImlibWidget::init( const char *filename )
 {
+    QPixmapCache::setCacheLimit(65535); // 64MB ish
   p           = 0L;
   im          = 0L;
-  imCache     = 0L;
   viewerMenu  = 0L;
   transWidget = 0L;
   w = h = 1; // > 0 for XCreateWindow
   isFullscreen = false;
   shiftPressed = false;
-  cachedImage  = "";
   desktopWidth = QApplication::desktop()->width();
   desktopHeight= QApplication::desktop()->height();
 
@@ -133,16 +132,24 @@ ImlibWidget::~ImlibWidget()
 
 bool ImlibWidget::loadImageInternal( char *file, bool cacheOnly )
 {
+  puts(file);
   uint myW, myH;
 
-  im = QPixmapCache::find(file);
-  if (!im || im->isNull()) {
-      im = new QPixmap;
-      im->load(file);
-      if (im->isNull()) {
+  QPixmap *myIm = QPixmapCache::find(file);
+  if (!myIm || myIm->isNull()) {
+      puts("not in cache");
+      myIm = new QPixmap;
+      myIm->load(file);
+      if (myIm->isNull()) {
           printf("failed to load %s\n", file);
+          return false;
       }
-      QPixmapCache::insert(file, im);
+      QPixmapCache::insert(file, myIm);
+  } else {
+      puts("Cache hit");
+  }
+  if (cacheOnly) {
+      return true;
   }
 
 #if 0
@@ -163,8 +170,8 @@ bool ImlibWidget::loadImageInternal( char *file, bool cacheOnly )
   myW = myIm->rgb_width;
   myH = myIm->rgb_height;
 #endif
-  myW = im->width();
-  myH = im->height();
+  myW = myIm->width();
+  myH = myIm->height();
 
   if ( idata->shrinkToScreen )
   { // eventually set width and height to the best/max possible screen size
@@ -184,21 +191,9 @@ bool ImlibWidget::loadImageInternal( char *file, bool cacheOnly )
     }
   }
 
-  //if ( cacheOnly )
-  //{
-  //  imCache = myIm;
-  //  wCache  = myW;
-  //  hCache  = myH;
-  //  Imlib_render( id, imCache, wCache, hCache );
-  //  Pixmap tmp = Imlib_move_image( id, imCache );
-  //  Imlib_free_pixmap( id, tmp ); // free the pixmap to avoid a memleak
-  //}
-  //else
-  //{
-    //im = myIm;
-    w  = myW;
-    h  = myH;
-  //}
+  im = myIm;
+  w  = myW;
+  h  = myH;
 
   return true;
 }
@@ -209,18 +204,6 @@ bool ImlibWidget::loadImage( const char *filename )
   bool success = false;
   char *file = (char *) filename;
 
-  if ( im )
-  {
-    delete im;
-    //Imlib_destroy_image( id, im );
-    im = 0L;
-  }
-
-  if ( cachedImage == filename ) // an image is preloaded
-  {
-    //    im = imCache;
-    cachedImage = ""; // cache has to be filled again
-  }
   success = loadImageInternal( file );
 
   if ( success ) currentFilename = file;
@@ -230,19 +213,8 @@ bool ImlibWidget::loadImage( const char *filename )
 bool ImlibWidget::preloadImage( const char *filename )
 {
   char *file = (char *) filename;
-  if ( imCache )
-  {
-    delete imCache;
-    //Imlib_destroy_image( id, imCache );
-    imCache = 0L;
-  }
 
   bool success = loadImageInternal( file, true );
-  if ( success )
-  {
-    cachedImage = filename;
-    //    cachedImage.detach();
-  }
   return success;
 }
 
@@ -344,13 +316,11 @@ void ImlibWidget::renderImage( uint w, uint h, bool dontMove )
 
   p = Imlib_move_image( id, im);
 #endif
-  if (!p || p->width() != w || p->height() != h) {
-      if (p) {
-          delete p;
-      }
-      p = new QPixmap(*im);
-      p->resize(w, h);
+  if (p) {
+      delete p;
   }
+  p = new QPixmap(*im);
+  p->resize(w, h);
   if (p->isNull()) {
       puts("no image");
       return;

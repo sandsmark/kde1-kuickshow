@@ -94,10 +94,9 @@ protected:
   Window         win;
   QPixmap         *p;
   Pixmap         m;
-  QPixmap     *im, *imCache;
+  QPixmap     *im;
   uint 		 cw, ch;
-  uint 		 w, h, wCache, hCache;
-  QString	 cachedImage;
+  uint 		 w, h;
 
 public slots:
   void 		 zoomIn() 	 { zoomImage( 1.5 ); }
