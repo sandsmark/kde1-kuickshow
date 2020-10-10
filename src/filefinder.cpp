@@ -46,3 +46,5 @@ void FileFinder::keyPressEvent( QKeyEvent *e )
     e->ignore();
   }
 }
+
+#include "filefinder.moc"

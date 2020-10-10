@@ -261,3 +261,4 @@ void KFileView::mousePressEvent( QMouseEvent *e )
   }
 }
 
+#include "kfileview.moc"

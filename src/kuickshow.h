@@ -23,8 +23,6 @@
 #include <kfileinfo.h>
 #include <ktmainwindow.h>
 
-#include <Imlib.h>
-
 #include "aboutwidget.h"
 #include "filefinder.h"
 #include "fileview.h"
@@ -45,14 +43,14 @@ protected:
   ~KuickShow();
 
   virtual void          closeEvent ( QCloseEvent * );
-  void 			initImlibParams( ImlibConfig *, ImlibInitParams * );
+  //void 			initImlibParams( ImlibConfig *, ImlibInitParams * );
 
 private:
 
   bool	       		eventFilter( QObject *, QEvent * );
   void                  resizeEvent( QResizeEvent * );
   bool 			isImage( KFileInfo * );
-  void 			initImlib();
+  //void 			initImlib();
   void 			readProperties( KConfig * );
   void 			saveProperties( KConfig * );
 
@@ -73,7 +71,7 @@ private:
   KStatusBar  		*sBar;
   KuickConfigDialog 	*dialog;
   KuickData             *kdata;
-  ImlibData             *id;
+  //ImlibData             *id;
   ImlibWidget 		*viewer;
 
 private slots:
@@ -93,7 +91,7 @@ private slots:
   void 			deleteFinder();
   void 			dropEvent( KDNDDropZone * );
   void 			printImage( QString );
-  void 			printImage( ImlibImage *, QString );
+  void 			printImage( QPixmap *, QString );
   bool 			deleteFile( QString );
 
   void 			slotToggleHidden( int );

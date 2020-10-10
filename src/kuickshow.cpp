@@ -41,10 +41,6 @@ KuickShow::KuickShow( QString start, const char *name) : KTMainWindow( name )
   kdata = new KuickData;
   kdata->load();
 
-  id = 0L;
-
-  initImlib();
-
   finder = 0L;
   viewer = 0L;
   viewerCount = 0;
@@ -216,7 +212,6 @@ KuickShow::~KuickShow()
   saveSettings();
 
   if ( viewer ) viewer->close( false );
-  if ( id )     delete id;
   if ( kdata )  delete kdata;
   kapp->quit();
 }
@@ -254,13 +249,13 @@ void KuickShow::showImage( KFileInfo *fi )
 {
   if ( isImage( fi ) )
   {
-    viewer = new ImlibWidget( 0L, kdata->idata, id, 0L );
+    viewer = new ImlibWidget( 0L, kdata->idata, 0L );
     viewerCount++;
     connect( viewer, SIGNAL( destroyed() ), this, SLOT( viewerDeleted() ) );
     connect( viewer, SIGNAL( sigBadImage(const char *) ),
 	     this, SLOT( messageCantLoadImage(const char*) ) );
-    connect( viewer, SIGNAL( sigPrintImage( ImlibImage *, QString ) ),
-	     this, SLOT( printImage( ImlibImage *, QString ) ));
+    connect( viewer, SIGNAL( sigPrintImage( QPixmap *, QString ) ),
+	     this, SLOT( printImage( QPixmap *, QString ) ));
 
     viewer->setPopupMenu( true );
     viewer->installEventFilter( this );
@@ -316,15 +311,17 @@ void KuickShow::nextSlide()
 
 void KuickShow::printImage( QString filename )
 {
+#if 0
   ImlibImage *im = Imlib_load_image( id, filename.data() );
   printImage( im, filename );
   Imlib_destroy_image( id, im );
+#endif
 }
 
 
-void KuickShow::printImage( ImlibImage *im, QString )
+void KuickShow::printImage( QPixmap *im, QString )
 {
-#if QT_VERSION < 140
+#if QT_VERSION < 140 || 1
   debug("KuickShow: Printing only available with Qt >= 1.40" );
   return;
 
@@ -669,7 +666,6 @@ void KuickShow::slotConfigApplied()
 		     idata->fastRemap, idata->ownPalette,
 		     idata->fastRender, idata->dither16bit,
 		     idata->dither8bit , idata->maxCache );
-  initImlib();
   kdata->save();
 
   if ( kdata->fileFilter != (QString) box->nameFilter() )
@@ -776,6 +772,7 @@ void KuickShow::deleteFinder()
 }
 
 
+#if 0
 void KuickShow::initImlib()
 {
   ImlibConfig *idata = kdata->idata;
@@ -830,6 +827,7 @@ void KuickShow::initImlibParams( ImlibConfig *idata, ImlibInitParams *par )
     par->pixmapcachesize = maxcache * 1024;
   }
 }
+#endif
 
 
 void KuickShow::resizeEvent( QResizeEvent *e )
@@ -848,3 +846,5 @@ void KuickShow::closeEvent( QCloseEvent * )
 {
   delete this;
 }
+
+#include "kuickshow.moc"

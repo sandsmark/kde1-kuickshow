@@ -16,3 +16,5 @@ MainWidget::~MainWidget()
 {
 
 }
+
+#include "mainwidget.moc"

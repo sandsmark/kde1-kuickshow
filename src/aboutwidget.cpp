@@ -156,3 +156,5 @@ bool AboutWidget::eventFilter( QObject *, QEvent *e )
 
   return ret;
 }
+
+#include "aboutwidget.moc"

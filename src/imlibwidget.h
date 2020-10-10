@@ -12,7 +12,6 @@
 #ifndef IMLIBWIDGET_H
 #define IMLIBWIDGET_H
 
-#include <Imlib2.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/extensions/shape.h>
@@ -34,7 +33,6 @@ class ImlibWidget : public QWidget
 public:
 
   ImlibWidget( const char *filename, ImlibConfig *_idata=0, QWidget *parent=0, const char *name=0 );
-  ImlibWidget( const char *filename, ImlibConfig *_idata, ImlibData *id, QWidget *parent=0, const char *name=0 );
 
   void 		 flipImage( bool );
   bool		 loadImage( const char * );
@@ -53,7 +51,7 @@ protected:
 
   ~ImlibWidget(); // deletes itself, just tell it to close( true );
 
-  void 		 init( const char *filename, ImlibData *id );
+  void 		 init( const char *filename );
   bool 		 loadImageInternal( char *, bool cacheOnly=false );
   void 		 centerImage();
   void 	       	 almostCenterImage();
@@ -63,8 +61,10 @@ protected:
   void 		 changeContrast( int, bool rerender = true );
   void 		 changeGamma( int, bool rerender = true );
   void           setImageModifier() {
+#if 0
       imlib_context_set_image(im);
       imlib_context_set_color_modifier(mod);
+#endif
   }
 
   void 		 closeEvent( QCloseEvent * );
@@ -91,12 +91,10 @@ protected:
   QWidget        *transWidget;
 
   Display        *disp;
-  ImlibData      *id;
   Window         win;
-  Pixmap         p;
+  QPixmap         *p;
   Pixmap         m;
-  Imlib_Image     im, imCache;
-  Imlib_Color_Modifier mod;
+  QPixmap     *im, *imCache;
   uint 		 cw, ch;
   uint 		 w, h, wCache, hCache;
   QString	 cachedImage;
@@ -122,7 +120,7 @@ protected slots:
 
 signals:
   void 		 sigBadImage( const char * );
-  void 		 sigPrintImage( Imlib_Image *, QString );
+  void 		 sigPrintImage( QPixmap *, QString );
 
 };
 

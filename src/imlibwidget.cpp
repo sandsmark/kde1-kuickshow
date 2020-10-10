@@ -20,6 +20,7 @@
 #include <qpalette.h>
 #include <qpainter.h>
 #include <qpen.h>
+#include <qpixmapcache.h>
 
 #include <kapp.h>
 #include <kfiledialog.h>
@@ -27,6 +28,7 @@
 
 #include "imlibwidget.h"
 
+#if 0
 ImlibWidget::ImlibWidget( const char *filename, ImlibConfig *_idata, QWidget *parent, const char *name ) :
   QWidget( parent, name )
 {
@@ -62,26 +64,31 @@ ImlibWidget::ImlibWidget( const char *filename, ImlibConfig *_idata, QWidget *pa
 
   //id = Imlib_init_with_params( disp, &par );
 
+
   init( filename, id );
 }
+#endif
 
 
-ImlibWidget::ImlibWidget( const char *filename, ImlibConfig *_idata, ImlibData *id, QWidget *parent, const char *name ) :
+ImlibWidget::ImlibWidget( const char *filename, ImlibConfig *_idata, QWidget *parent, const char *name ) :
   QWidget( parent, name )
 {
-  if ( !id || !_idata )
+  if ( !_idata )
     close( false );
 
   idata = _idata;
 
+#if 0
   deleteImlibConfig = false;
   deleteImlibData   = false;
+#endif
+
   disp = kapp->getDisplay();
-  init( filename, id );
+  init( filename );
 }
 
 
-void ImlibWidget::init( const char *filename, ImlibData *_id )
+void ImlibWidget::init( const char *filename )
 {
   p           = 0L;
   im          = 0L;
@@ -98,8 +105,10 @@ void ImlibWidget::init( const char *filename, ImlibData *_id )
   setPalette( QPalette( QColor( black ) ) );
   setBackgroundMode( PaletteBackground );
 
+#if 0
   id = _id;
   mod = imlib_create_color_modifier();
+#endif
 
   win = XCreateSimpleWindow(disp, winId(), 0,0,w,h,0,0,0);
 
@@ -113,9 +122,11 @@ void ImlibWidget::init( const char *filename, ImlibData *_id )
 ImlibWidget::~ImlibWidget()
 {
   setPopupMenu( false );
+#if 0
   if ( p ) Imlib_free_pixmap( id, p );
   if ( im ) Imlib_destroy_image( id, im );
   if ( deleteImlibData ) delete id;
+#endif
   if ( win ) XDestroyWindow( disp, win );
   if ( deleteImlibConfig ) delete idata;
 }
@@ -124,6 +135,17 @@ bool ImlibWidget::loadImageInternal( char *file, bool cacheOnly )
 {
   uint myW, myH;
 
+  im = QPixmapCache::find(file);
+  if (!im || im->isNull()) {
+      im = new QPixmap;
+      im->load(file);
+      if (im->isNull()) {
+          printf("failed to load %s\n", file);
+      }
+      QPixmapCache::insert(file, im);
+  }
+
+#if 0
   Imlib_Image myIm = imlib_load_image_immediately( file );
   if ( !myIm ) return false; // couldn't load file, probably wrong format
 
@@ -140,6 +162,9 @@ bool ImlibWidget::loadImageInternal( char *file, bool cacheOnly )
 
   myW = myIm->rgb_width;
   myH = myIm->rgb_height;
+#endif
+  myW = im->width();
+  myH = im->height();
 
   if ( idata->shrinkToScreen )
   { // eventually set width and height to the best/max possible screen size
@@ -170,7 +195,7 @@ bool ImlibWidget::loadImageInternal( char *file, bool cacheOnly )
   //}
   //else
   //{
-    im = myIm;
+    //im = myIm;
     w  = myW;
     h  = myH;
   //}
@@ -186,7 +211,8 @@ bool ImlibWidget::loadImage( const char *filename )
 
   if ( im )
   {
-    Imlib_destroy_image( id, im );
+    delete im;
+    //Imlib_destroy_image( id, im );
     im = 0L;
   }
 
@@ -206,7 +232,8 @@ bool ImlibWidget::preloadImage( const char *filename )
   char *file = (char *) filename;
   if ( imCache )
   {
-    Imlib_destroy_image( id, imCache );
+    delete imCache;
+    //Imlib_destroy_image( id, imCache );
     imCache = 0L;
   }
 
@@ -311,13 +338,25 @@ void ImlibWidget::renderImage( uint w, uint h, bool dontMove )
 
   QApplication::setOverrideCursor( waitCursor );
 
+#if 0
   if ( p ) Imlib_free_pixmap( id, p );
   Imlib_render( id, im, w, h);
 
   p = Imlib_move_image( id, im);
-  //  m = Imlib_move_mask( id, im); // do I really need that mask?
-  XSetWindowBackgroundPixmap( disp, win, p);
-  //  if (m) XShapeCombineMask(disp,win,ShapeBounding,0,0,m,ShapeSet);
+#endif
+  if (!p || p->width() != w || p->height() != h) {
+      if (p) {
+          delete p;
+      }
+      p = new QPixmap(*im);
+      p->resize(w, h);
+  }
+  if (p->isNull()) {
+      puts("no image");
+      return;
+  }
+
+  XSetWindowBackgroundPixmap( disp, win, p->handle());
   XClearWindow( disp, win );
 
 
@@ -387,8 +426,8 @@ void ImlibWidget::changeBrightness( int factor, bool rerender )
   if ( factor == 0 )
     return;
 
-  mod.brightness += idata->brightnessFactor * (int) factor;
-  setImageModifier();
+  //mod.brightness += idata->brightnessFactor * (int) factor;
+  //setImageModifier();
 
   if ( rerender )
   {
@@ -402,8 +441,8 @@ void ImlibWidget::changeContrast( int factor, bool rerender )
   if ( factor == 0 )
     return;
 
-  mod.contrast += idata->contrastFactor * (int) factor;
-  setImageModifier();
+  //mod.contrast += idata->contrastFactor * (int) factor;
+  //setImageModifier();
 
   if ( rerender )
   {
@@ -417,8 +456,8 @@ void ImlibWidget::changeGamma( int factor, bool rerender )
   if ( factor == 0 )
     return;
 
-  mod.gamma += idata->gammaFactor * (int) factor;
-  setImageModifier();
+  //mod.gamma += idata->gammaFactor * (int) factor;
+  //setImageModifier();
 
   if ( rerender )
   {
@@ -445,6 +484,7 @@ void ImlibWidget::zoomImage( float factor )
 
 void ImlibWidget::flipImage( bool horizontally )
 {
+#if 0
   imlib_context_set_image(im);
   if ( horizontally )
       imlib_image_flip_horizontal();
@@ -453,10 +493,12 @@ void ImlibWidget::flipImage( bool horizontally )
 
   renderImage( w, h );
   showImage();
+#endif
 }
 
 void ImlibWidget::rotate( int d )
 {
+#if 0
   imlib_context_set_image(im);
   //idk
   double angle = 0;
@@ -470,6 +512,7 @@ void ImlibWidget::rotate( int d )
 
   paintImage();
   showImage();
+#endif
 }
 
 
@@ -536,11 +579,13 @@ void ImlibWidget::saveImage()
   file = KFileDialog::getSaveFileName( currentFilename.data(), filter.data() );
   if ( !file.isEmpty() )
   {
+#if 0
     imlib_context_set_image(im);
     imlib_apply_color_modifier();
     Imlib_Load_Error err;
     imlib_save_image_with_error_return(file.data(), &err);
-    if ( err != IMLIB_LOAD_ERROR_NONE )
+#endif
+    if ( !im->save(file, "png") ) // todo hardcode
     {
       QString tmp = i18n("Couldn't save the file,\n");
       tmp += i18n("maybe this disk is full, or you don't\n");
@@ -782,3 +827,5 @@ void ImlibWidget::closeEvent( QCloseEvent *e )
   e->accept();
   delete this;
 }
+
+#include "imlibwidget.moc"

@@ -79,3 +79,5 @@ void LogoTabDialog::resizeEvent( QResizeEvent *e )
   if ( hasWidget )
     w->resize( width(), height() - Logo->height() - 2*MARGIN );
 }
+
+#include "logotabdialog.moc"

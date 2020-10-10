@@ -176,3 +176,5 @@ void KuickConfigDialog::resizeEvent( QResizeEvent *e )
   gbox2->resize( width() - 4*TOPMARGIN, 195 );
   editFilter->resize( gbox2->width() - editFilter->x() + TOPMARGIN, editFilter->height() );
 }
+
+#include "kuickconfigdlg.moc"

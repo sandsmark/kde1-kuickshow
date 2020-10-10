@@ -42,3 +42,5 @@ void KURLWidget::paintEvent(QPaintEvent *)
   p.drawText(rect(), AlignLeft, u);
   p.end();
 }
+
+#include "kurlwidget.moc"

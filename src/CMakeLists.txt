@@ -38,6 +38,7 @@ target_link_libraries(kuickshow
     ${KDE1_KDEUI}
     ${KDE1_KFILE}
     ${KDE1_KFM}
+    ${KDE1_KIMGIO}
     Qt::Qt1
     X11::X11
     GIF::GIF

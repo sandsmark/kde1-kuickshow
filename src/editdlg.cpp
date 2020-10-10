@@ -40,3 +40,5 @@ EditDialog::EditDialog( QString text, const char *editText, const char *caption,
   setFixedSize( 300, 120 );
 }
 
+
+#include "editdlg.moc"

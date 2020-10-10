@@ -158,3 +158,5 @@ void FileView::cdHome()
 {
   enterDir( QDir::homeDirPath().data() );
 }
+
+#include "fileview.moc"

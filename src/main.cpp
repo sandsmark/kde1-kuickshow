@@ -2,6 +2,7 @@
 #include <qstring.h>
 
 #include <kapp.h>
+#include <kimgio.h>
 
 #include "kuickshow.h"
 
@@ -9,6 +10,7 @@
 int main(int argc, char **argv)
 {
   KApplication app( argc, argv, "kuickshow" );
+  kimgioRegister();
 
   QString start = "";
   if ( argc >= 2 )
