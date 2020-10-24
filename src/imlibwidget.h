@@ -97,6 +97,9 @@ protected:
   QPixmap     *im;
   uint 		 cw, ch;
   uint 		 w, h;
+  float brightness;
+  int contrast;
+  float gamma;
 
 public slots:
   void 		 zoomIn() 	 { zoomImage( 1.5 ); }
@@ -106,10 +109,10 @@ public slots:
   void 		 printImage();
   void 		 rotate90() 	  { rotate( 1 );            }
   void 		 rotate270() 	  { rotate( -1 );           }
-  void           moreBrightness() { changeBrightness(  1 ); }
-  void           lessBrightness() { changeBrightness( -1 ); }
-  void           moreContrast()   { changeContrast(  1 );   }
-  void           lessContrast()   { changeContrast( -1 );   }
+  void           moreBrightness() { changeBrightness(  10 ); }
+  void           lessBrightness() { changeBrightness( -10 ); }
+  void           moreContrast()   { changeContrast(  10 );   }
+  void           lessContrast()   { changeContrast( -10 );   }
   void           moreGamma()      { changeGamma(  1 );      }
   void           lessGamma()      { changeGamma( -1 );      }
 

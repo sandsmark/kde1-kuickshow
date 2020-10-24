@@ -1,4 +1,26 @@
 #include <qimage.h>
+#include <algorithm>
+
+#define CLAMP(val, min, max) (val < max ? (val > min ? val : min) : max)
+
+
+static int calcValue(unsigned int pixel)
+{
+    const int red = qRed(pixel);
+    const int green = qGreen(pixel);
+    const int blue = qBlue(pixel);
+    if (red > green) {
+        if (red > blue) {
+            return red;
+        } else {
+            return blue;
+        }
+    } else if (blue > green) {
+        return blue;
+    } else {
+        return green;
+    }
+}
 
 static void adjustContrast(QPixmap &pixmap, int c)
 {
@@ -6,35 +28,21 @@ static void adjustContrast(QPixmap &pixmap, int c)
 
     if(c > 255)
         c = 255;
-    if(c < -255)
-        c =  -255;
+    if(c < -50)
+        c =  -50;
     int pixels = img.depth() > 8 ? img.width()*img.height() :
         img.numColors();
     unsigned int *data = img.depth() > 8 ? (unsigned int *)img.bits() :
         (unsigned int *)img.colorTable();
     int i, r, g, b;
+    c += 50;
     for(i=0; i < pixels; ++i){
-        r = qRed(data[i]);
-        g = qGreen(data[i]);
-        b = qBlue(data[i]);
-        if(qGray(data[i]) <= 127){
-            if(r - c <= 255)
-                r -= c;
-            if(g - c <= 255)
-                g -= c;
-            if(b - c <= 255)
-                b -= c;
-        }
-        else{
-            if(r + c <= 255)
-                r += c;
-            if(g + c <= 255)
-                g += c;
-            if(b + c <= 255)
-                b += c;
-        }
-        data[i] = qRgb(r, g, b);
+        r = (qRed(data[i]) - 127) * c / 50 + 127;
+        g = (qGreen(data[i]) - 127) * c / 50 + 127;
+        b = (qBlue(data[i]) - 127) * c / 50 + 127;
+        data[i] = qRgb(CLAMP(r, 0, 255), CLAMP(g, 0, 255), CLAMP(b, 0, 255));
     }
+
     pixmap.convertFromImage(img);
 }
 

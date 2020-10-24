@@ -27,6 +27,7 @@
 #include <kwm.h>
 
 #include "imlibwidget.h"
+#include "effects.h"
 
 #if 0
 ImlibWidget::ImlibWidget( const char *filename, ImlibConfig *_idata, QWidget *parent, const char *name ) :
@@ -77,6 +78,9 @@ ImlibWidget::ImlibWidget( const char *filename, ImlibConfig *_idata, QWidget *pa
     close( false );
 
   idata = _idata;
+  brightness = 0;
+  contrast = 0;
+  gamma = 1.1;
 
 #if 0
   deleteImlibConfig = false;
@@ -325,6 +329,12 @@ void ImlibWidget::renderImage( uint w, uint h, bool dontMove )
       puts("no image");
       return;
   }
+  if (contrast != 0) {
+      adjustContrast(*p, contrast);
+  }
+  if (brightness != 0) {
+      adjustBrightness(*p, brightness/100.);
+  }
 
   XSetWindowBackgroundPixmap( disp, win, p->handle());
   XClearWindow( disp, win );
@@ -396,8 +406,19 @@ void ImlibWidget::changeBrightness( int factor, bool rerender )
   if ( factor == 0 )
     return;
 
-  //mod.brightness += idata->brightnessFactor * (int) factor;
-  //setImageModifier();
+  if (factor < 0 && brightness <= -100) {
+      return;
+  }
+  if (factor > 0 && brightness >= 200) {
+      return;
+  }
+
+  brightness += factor;
+  if (brightness < -100) {
+      brightness = -100;
+  } else if (brightness > 200) {
+      brightness = 200;
+  }
 
   if ( rerender )
   {
@@ -411,9 +432,22 @@ void ImlibWidget::changeContrast( int factor, bool rerender )
   if ( factor == 0 )
     return;
 
-  //mod.contrast += idata->contrastFactor * (int) factor;
-  //setImageModifier();
 
+  if (factor < 0 && contrast <= -50) {
+      return;
+  }
+  if (factor > 0 && contrast >= 255) {
+      return;
+  }
+
+  contrast += factor;
+  if (contrast < -50) {
+      contrast = -50;
+  } else if (contrast > 255) {
+      contrast = 255;
+  }
+
+  printf("contrast: %d\n", contrast);
   if ( rerender )
   {
     renderImage( w, h );
