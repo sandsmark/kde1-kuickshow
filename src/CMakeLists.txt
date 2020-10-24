@@ -12,7 +12,7 @@ qt1_wrap_moc(MOC_FILES
     mainwidget.h
 )
 
-add_executable(kuickshow
+add_executable(kuickshow1
     aboutwidget.cpp
     editdlg.cpp
     filefinder.cpp
@@ -31,9 +31,9 @@ add_executable(kuickshow
     ${MOC_FILES}
 )
 
-target_compile_definitions(kuickshow PRIVATE VERSION=\"${PROJECT_VERSION}\")
+target_compile_definitions(kuickshow1 PRIVATE VERSION=\"${PROJECT_VERSION}\")
 
-target_link_libraries(kuickshow
+target_link_libraries(kuickshow1
     ${KDE1_KDECORE}
     ${KDE1_KDEUI}
     ${KDE1_KFILE}
@@ -45,5 +45,5 @@ target_link_libraries(kuickshow
     JPEG::JPEG
 )
 
-install(TARGETS kuickshow RUNTIME DESTINATION ${KDE1_BINDIR})
+install(TARGETS kuickshow1 RUNTIME DESTINATION ${KDE1_BINDIR})
 

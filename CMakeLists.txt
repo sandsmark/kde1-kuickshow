@@ -51,11 +51,11 @@ install(FILES
 )
 
 install(FILES
-    pics/toolbar/help.xpm
+    #pics/toolbar/help.xpm # already in kdelibs
     pics/toolbar/ksconfig.xpm
     pics/toolbar/ksexit.xpm
     pics/toolbar/ksslide.xpm
-    pics/toolbar/reload.xpm
+    #pics/toolbar/reload.xpm # already in kdelibs
     pics/toolbar/topic.xpm
     DESTINATION ${KDE1_TOOLBARDIR}
 )

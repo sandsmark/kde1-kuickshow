@@ -1,7 +1,7 @@
 # KDE Config File 
 [KDE Desktop Entry]
 Name=KuickShow
-Exec=kuickshow -caption "%c" %i %m %f
+Exec=kuickshow1 -caption "%c" %i %m %f
 Icon=kuickshow.xpm
 Type=Application
 BinaryPattern=kuickshow;
