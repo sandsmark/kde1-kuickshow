@@ -1,5 +1,5 @@
 #include <qimage.h>
-#include <algorithm>
+#include <math.h>
 
 #define CLAMP(val, min, max) (val < max ? (val > min ? val : min) : max)
 
@@ -102,5 +102,33 @@ static void adjustBrightness(QPixmap &pixmap, float percent)
     }
     delete [] segTbl;
 
+    pixmap.convertFromImage(image);
+}
+
+static void adjustGamma(QPixmap &pixmap, float gamma)
+{
+    QImage image = pixmap.convertToImage();
+    unsigned char gammaTable[256];
+    for (int i = 0; i < 256; ++i) {
+        gammaTable[i] = pow(i / 255.f, gamma) * 255.f;
+    }
+    for (int y = 0; y < image.height(); y++) {
+        uchar *data = image.scanLine(y);
+        for (int x = 0; x < image.bytesPerLine(); x++) {
+            data[x] = gammaTable[data[x]];
+        }
+    }
+
+    int pixels = image.depth() > 8 ? image.width()*image.height() :
+        image.numColors();
+    unsigned int *data = image.depth() > 8 ? (unsigned int *)image.bits() :
+        (unsigned int *)image.colorTable();
+    int i, r, g, b;
+    for(i=0; i < pixels; ++i){
+        r = gammaTable[qRed(data[i])];
+        g = gammaTable[qGreen(data[i])];
+        b = gammaTable[qBlue(data[i])];
+        data[i] = qRgb(CLAMP(r, 0, 255), CLAMP(g, 0, 255), CLAMP(b, 0, 255));
+    }
     pixmap.convertFromImage(image);
 }

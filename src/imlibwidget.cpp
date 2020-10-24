@@ -80,7 +80,7 @@ ImlibWidget::ImlibWidget( const char *filename, ImlibConfig *_idata, QWidget *pa
   idata = _idata;
   brightness = 0;
   contrast = 0;
-  gamma = 1.1;
+  gamma = 11;
 
 #if 0
   deleteImlibConfig = false;
@@ -329,6 +329,9 @@ void ImlibWidget::renderImage( uint w, uint h, bool dontMove )
       puts("no image");
       return;
   }
+  if (gamma != 11) {
+      adjustGamma(*p, gamma / 10.);
+  }
   if (contrast != 0) {
       adjustContrast(*p, contrast);
   }
@@ -460,6 +463,20 @@ void ImlibWidget::changeGamma( int factor, bool rerender )
   if ( factor == 0 )
     return;
 
+
+  if (factor < 0 && gamma <= 1) {
+      return;
+  }
+  if (factor > 0 && gamma >= 100) {
+      return;
+  }
+
+  gamma += factor;
+  if (gamma < 1) {
+      gamma = 1;
+  } else if (gamma > 100) {
+      gamma = 100;
+  }
   //mod.gamma += idata->gammaFactor * (int) factor;
   //setImageModifier();
 
